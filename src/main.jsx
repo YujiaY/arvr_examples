@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./App";
 import "./index.css";
-import Contact from "./pages/contact";
 import ImageTracking from "./pages/ImageTracking";
 import Room from "./pages/Room";
 import RoomGyroscope from "./pages/RoomGyroscope";
@@ -15,12 +13,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    children: [
-      {
-        path: "contacts/:contactId",
-        element: <Contact />,
-      },
-    ],
   },
   {
     path: "room",
