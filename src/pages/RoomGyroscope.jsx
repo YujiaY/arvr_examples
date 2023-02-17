@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-//import "aframe";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import DialogModal from "../components/Dialog";
+import BackButton from "../components/BackButton";
 
 //assets
 import cameraIcon from "../assets/icons/camera.png";
@@ -16,8 +17,6 @@ import roomModel from "../assets/models/bedroom.glb";
 import "../aframe-components/touch-look-controls";
 import "../aframe-components/play-audio-on-click";
 import "../aframe-components/play-video-on-click";
-import DialogModal from "../components/Dialog";
-import BackButton from "../components/BackButton";
 
 function RoomGyroscope() {
   const loader = new GLTFLoader();
@@ -57,13 +56,7 @@ function RoomGyroscope() {
           ></a-camera>
         </a-entity>
         <a-entity
-          id="image-tracker"
-          display-box-on-target
-          mindar-image-target="targetIndex: 0"
-        ></a-entity>
-        <a-entity
           id="room"
-          display-on-tracking
           gltf-model="#bedroom"
           position="0 2 -1.8"
           rotation="0 0 0"
@@ -85,7 +78,7 @@ function RoomGyroscope() {
             rotation="0 0 0"
           ></a-video>
           <a-image
-            play-video-on-click
+            play-video-on-click="videoEntity: #dance-video; videoElement: #dance"
             src="#icon-camera"
             class="clickable"
             position="-1.6 1 -2.79"

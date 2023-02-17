@@ -9,6 +9,7 @@ import Room from "./pages/Room";
 import RoomGyroscope from "./pages/RoomGyroscope";
 import RoomIOS from "./pages/RoomIOS";
 import Root from "./pages/Root";
+import VR360Video from "./pages/VR360Video";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "image-tracking",
     element: <ImageTracking />,
+  },
+  {
+    path: "vr-video",
+    element: <VR360Video />,
   },
 ]);
 

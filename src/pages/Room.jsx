@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-//import "aframe";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import DialogModal from "../components/Dialog";
+import BackButton from "../components/BackButton";
 
 //assets
 import cameraIcon from "../assets/icons/camera.png";
@@ -8,6 +9,7 @@ import micIcon from "../assets/icons/mic.png";
 import questionIcon from "../assets/icons/question.png";
 import textIcon from "../assets/icons/text.png";
 import monkeyFramedImg from "../assets/monkey-framed.png";
+import monkeyCut from "../assets/monkey-cut.png";
 import dancingVideo from "../assets/dancing-no-background.webm";
 import roomAudio from "../assets/ice_fire.mp3";
 import roomModel from "../assets/models/bedroom.glb";
@@ -16,13 +18,12 @@ import roomModel from "../assets/models/bedroom.glb";
 import "../aframe-components/touch-look-controls";
 import "../aframe-components/play-audio-on-click";
 import "../aframe-components/play-video-on-click";
-import DialogModal from "../components/Dialog";
-import BackButton from "../components/BackButton";
 
 function Room() {
   const loader = new GLTFLoader();
 
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [pinpointDialogOpen, setPinpointDialogOpen] = useState(false);
 
   // loading the room model in the scene
   loader.load(roomModel, (d) => {
@@ -57,13 +58,7 @@ function Room() {
           ></a-camera>
         </a-entity>
         <a-entity
-          id="image-tracker"
-          display-box-on-target
-          mindar-image-target="targetIndex: 0"
-        ></a-entity>
-        <a-entity
           id="room"
-          display-on-tracking
           gltf-model="#bedroom"
           position="0 2 -1.8"
           rotation="0 0 0"
@@ -85,7 +80,7 @@ function Room() {
             rotation="0 0 0"
           ></a-video>
           <a-image
-            play-video-on-click
+            play-video-on-click="videoEntity: #dance-video; videoElement: #dance"
             src="#icon-camera"
             class="clickable"
             position="-1.6 1 -2.79"
@@ -115,7 +110,7 @@ function Room() {
             position="0.2 0.92 -2.79"
             scale="0.2 0.2 0.2"
             animation="property: scale; to: 0.26 0.26 0.26; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-            onClick={() => setDialogOpen(true)}
+            onClick={() => setPinpointDialogOpen(true)}
           ></a-image>
           <a-text
             id="text"
@@ -153,6 +148,28 @@ function Room() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
+        </div>
+      </DialogModal>
+      <DialogModal
+        isOpen={pinpointDialogOpen}
+        setDialogOpen={setPinpointDialogOpen}
+      >
+        <div className="flex flex-col space-y-4 mb-4">
+          <h1 className="text-xl font-bold text-left mb-4">
+            Lorem ipsum dolor sit amet
+          </h1>
+          <p className="text-sm text-left font-thin">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <div className="flex justify-center">
+            <img src={monkeyCut} alt="Detailed view of monkey eyes" />
+          </div>
         </div>
       </DialogModal>
     </>
