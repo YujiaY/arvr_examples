@@ -37,7 +37,7 @@ function VR360Video() {
         <a-entity id="rig" position="0 0 0">
           <a-camera
             id="camera"
-            look-controls="enabled: true; magicWindowTrackingEnabled: false;"
+            look-controls="enabled: true;"
             cursor="fuse: false; rayOrigin: mouse;"
             raycaster="far: 10000; objects: .clickable"
           ></a-camera>

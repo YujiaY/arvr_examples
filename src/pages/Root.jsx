@@ -32,7 +32,7 @@ export default function Root() {
           </div>
           <div>
             <Link to={"vr-video"}>
-              <button>Example with image 360 VR video.</button>
+              <button>Example with 360 VR video.</button>
             </Link>
           </div>
         </div>

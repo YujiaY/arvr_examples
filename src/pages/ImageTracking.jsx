@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-// import "mind-ar/dist/mindar-image.prod.js";
-// import "aframe";
-// import "mind-ar/dist/mindar-image-aframe.prod.js";
-//import "aframe";
-// import "mind-ar/dist/mindar-image-aframe.prod.js";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import DialogModal from "../components/Dialog";
+import BackButton from "../components/BackButton";
 
 //assets
 import cameraIcon from "../assets/icons/camera.png";
@@ -12,6 +8,7 @@ import micIcon from "../assets/icons/mic.png";
 import questionIcon from "../assets/icons/question.png";
 import textIcon from "../assets/icons/text.png";
 import monkeyFramedImg from "../assets/monkey-framed.png";
+import monkeyCut from "../assets/monkey-cut.png";
 import dancingVideo from "../assets/dancing-no-background.webm";
 import roomAudio from "../assets/ice_fire.mp3";
 import roomModel from "../assets/models/bedroom.glb";
@@ -19,16 +16,12 @@ import roomModel from "../assets/models/bedroom.glb";
 //aframe components
 import "../aframe-components/play-audio-on-click";
 import "../aframe-components/play-video-on-click";
-import DialogModal from "../components/Dialog";
-import BackButton from "../components/BackButton";
-
-import MindARViewer from "./mindARViewer";
 
 function ImageTracking() {
-  const loader = new GLTFLoader();
   const sceneRef = useRef(null);
 
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [pinpointDialogOpen, setPinpointDialogOpen] = useState(false);
 
   useEffect(() => {
     const sceneEl = sceneRef.current;
@@ -120,7 +113,7 @@ function ImageTracking() {
               position="0 0 0"
               scale="0.2 0.2 0.2"
               animation="property: scale; to: 0.26 0.26 0.26; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-              onClick={() => setDialogOpen(true)}
+              onClick={() => setPinpointDialogOpen(true)}
             ></a-image>
             <a-text
               id="text"
@@ -159,6 +152,28 @@ function ImageTracking() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
+        </div>
+      </DialogModal>
+      <DialogModal
+        isOpen={pinpointDialogOpen}
+        setDialogOpen={setPinpointDialogOpen}
+      >
+        <div className="flex flex-col space-y-4 mb-4">
+          <h1 className="text-xl font-bold text-left mb-4">
+            Lorem ipsum dolor sit amet
+          </h1>
+          <p className="text-sm text-left font-thin">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <div className="flex justify-center">
+            <img src={monkeyCut} alt="Detailed view of monkey eyes" />
+          </div>
         </div>
       </DialogModal>
     </>
