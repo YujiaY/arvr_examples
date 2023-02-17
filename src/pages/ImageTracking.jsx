@@ -86,21 +86,21 @@ function ImageTracking() {
               visible="false"
               width="1.6"
               height="2.85"
-              position="1.6 0 -2.7"
+              position="1.4 0 -2.7"
               rotation="0 0 0"
             ></a-video>
             <a-image
               play-video-on-click
               src="#icon-camera"
               class="clickable"
-              position="-0.14 -0.5 0"
+              position="-0.4 -0.5 0"
               scale="0.2 0.2 0.2"
             ></a-image>
             <a-image
               play-audio-on-click
               src="#icon-mic"
               class="clickable"
-              position="0.42 -0.5 0"
+              position="-0.1 -0.5 0"
               scale="0.2 0.2 0.2"
             ></a-image>
 
@@ -108,7 +108,7 @@ function ImageTracking() {
               display-modal
               src="#icon-text"
               class="clickable"
-              position="0.14 -0.5 0"
+              position="0.2 -0.5 0"
               scale="0.2 0.2 0.2"
               onClick={() => setDialogOpen(true)}
             ></a-image>
