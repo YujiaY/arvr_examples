@@ -11,6 +11,18 @@ export default function Root() {
               Example with full immersive room in VR with interactions.
             </button>
           </Link>
+          <Link to={"room-ios"}>
+            <button>
+              Example with full immersive room in VR with interactions with mp4
+              video.
+            </button>
+          </Link>
+          <Link to={"room-gyroscope"}>
+            <button>
+              Example with full immersive room in VR with interactions tracking
+              mobile movements.
+            </button>
+          </Link>
           <div>
             <Link to={"image-tracking"}>
               <button>

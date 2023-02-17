@@ -19,7 +19,7 @@ import "../aframe-components/play-video-on-click";
 import DialogModal from "../components/Dialog";
 import BackButton from "../components/BackButton";
 
-function Room() {
+function RoomGyroscope() {
   const loader = new GLTFLoader();
 
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -51,7 +51,7 @@ function Room() {
         <a-entity id="rig" position="0 0 0">
           <a-camera
             id="camera"
-            look-controls="enabled: true; magicWindowTrackingEnabled: false;"
+            look-controls="enabled: true;"
             cursor="fuse: false; rayOrigin: mouse;"
             raycaster="far: 10000; objects: .clickable"
           ></a-camera>
@@ -159,4 +159,4 @@ function Room() {
   );
 }
 
-export default Room;
+export default RoomGyroscope;

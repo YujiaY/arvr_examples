@@ -17,8 +17,8 @@ import roomAudio from "../assets/ice_fire.mp3";
 import roomModel from "../assets/models/bedroom.glb";
 
 //aframe components
-import "../aframe-components/Room/play-audio-on-click";
-import "../aframe-components/Room/play-video-on-click";
+import "../aframe-components/play-audio-on-click";
+import "../aframe-components/play-video-on-click";
 import DialogModal from "../components/Dialog";
 import BackButton from "../components/BackButton";
 

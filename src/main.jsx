@@ -6,6 +6,8 @@ import "./index.css";
 import Contact from "./pages/contact";
 import ImageTracking from "./pages/ImageTracking";
 import Room from "./pages/Room";
+import RoomGyroscope from "./pages/RoomGyroscope";
+import RoomIOS from "./pages/RoomIOS";
 import Root from "./pages/Root";
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "room",
     element: <Room />,
+  },
+  {
+    path: "room-ios",
+    element: <RoomIOS />,
+  },
+  {
+    path: "room-gyroscope",
+    element: <RoomGyroscope />,
   },
   {
     path: "image-tracking",

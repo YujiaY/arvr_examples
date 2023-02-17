@@ -8,7 +8,7 @@ import micIcon from "../assets/icons/mic.png";
 import questionIcon from "../assets/icons/question.png";
 import textIcon from "../assets/icons/text.png";
 import monkeyFramedImg from "../assets/monkey-framed.png";
-import dancingVideo from "../assets/dancing-no-background.webm";
+import dancingVideo from "../assets/dancing-sd.mp4";
 import roomAudio from "../assets/ice_fire.mp3";
 import roomModel from "../assets/models/bedroom.glb";
 
@@ -19,7 +19,7 @@ import "../aframe-components/play-video-on-click";
 import DialogModal from "../components/Dialog";
 import BackButton from "../components/BackButton";
 
-function Room() {
+function RoomIOS() {
   const loader = new GLTFLoader();
 
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -159,4 +159,4 @@ function Room() {
   );
 }
 
-export default Room;
+export default RoomIOS;
