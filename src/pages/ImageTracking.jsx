@@ -83,7 +83,7 @@ function ImageTracking() {
               rotation="0 0 0"
             ></a-video>
             <a-image
-              play-video-on-click
+              play-video-on-click="videoEntity: #dance-video; videoElement: #dance"
               src="#icon-camera"
               class="clickable"
               position="-0.4 -0.5 0"
