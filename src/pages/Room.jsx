@@ -60,16 +60,6 @@ function Room() {
           display-box-on-target
           mindar-image-target="targetIndex: 0"
         ></a-entity>
-        <a-image
-          display-3d-model
-          camera-listener
-          id="pinpoint-one"
-          src="#icon-question"
-          class="clickable"
-          position="0.2 0.92 -2.79"
-          scale="0.2 0.2 0.2"
-          animation="property: scale; to: 0.22 0.22 0.22; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
-        ></a-image>
         <a-entity
           id="room"
           display-on-tracking
@@ -124,6 +114,7 @@ function Room() {
             position="0.2 0.92 -2.79"
             scale="0.2 0.2 0.2"
             animation="property: scale; to: 0.26 0.26 0.26; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate"
+            onClick={() => setDialogOpen(true)}
           ></a-image>
           <a-text
             id="text"

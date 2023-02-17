@@ -1,8 +1,15 @@
 AFRAME.registerComponent("play-audio-on-click", {
   init: function () {
-    this.el.addEventListener("click", (evt) => {
-      var entity = document.querySelector("[sound]");
-      entity.components.sound.playSound();
+    let playing = false;
+    let audio = document.querySelector("#music");
+    this.el.addEventListener("click", () => {
+      if (!playing) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+      playing = !playing;
     });
   },
 });

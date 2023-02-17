@@ -49,7 +49,7 @@ function ImageTracking() {
         <BackButton url={"/"}></BackButton>
         <a-scene
           ref={sceneRef}
-          mindar-image="imageTargetSrc: src/assets/image-targets/monkey.mind; filterMinCF:0.000001; filterBeta: 0.00001; autoStart: true; uiScanning: no;"
+          mindar-image="imageTargetSrc: /assets/image-targets/monkey.mind; filterMinCF:0.000001; filterBeta: 0.00001; autoStart: true; uiScanning: no;"
           color-space="sRGB"
           embedded
           renderer="colorManagement: true, physicallyCorrectLights"
